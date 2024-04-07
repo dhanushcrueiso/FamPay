@@ -17,6 +17,7 @@ type Config struct {
 	TokenLen     int    `json:"token_len"`
 	TokenExpiry  int    `json:"token_expiry"`
 	ServiceToken string `json:"service_token"`
+	ApiKey       string `json:"api_key"`
 }
 
 func ParseJSON(r io.Reader, v any) error {
@@ -40,3 +41,5 @@ func Set(c *Config) {
 	}
 
 }
+
+var APIKey = "AIzaSyDV7kGnfCW8W5anPDNAFR-f-fytiovoFq8"

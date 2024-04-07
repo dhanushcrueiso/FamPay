@@ -4,9 +4,11 @@ import (
 	"FAMPAY/config"
 	"FAMPAY/internal/database/db"
 	"FAMPAY/internal/routes"
+	"FAMPAY/internal/services"
 	"fmt"
 	"log"
 	"os"
+	"time"
 
 	"github.com/gofiber/fiber"
 )
@@ -39,4 +41,16 @@ func main() {
 	fmt.Printf("Server is running on port %s\n", cnf.Port)
 
 	app.Listen(cnf.Port)
+}
+
+func init() {
+	ticker := time.NewTicker(10 * time.Second)
+	defer ticker.Stop()
+
+	for {
+		select {
+		case <-ticker.C:
+			go services.FetchAndStoreVideos()
+		}
+	}
 }
