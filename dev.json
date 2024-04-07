@@ -3,6 +3,6 @@
     "app_name": "fampay",
     "port": "3007",
     "database_url": "postgresql://postgres:postgres@localhost:5432/youtube_data?sslmode=disable",
-    "max_db_conn": 5
-
+    "max_db_conn": 5,
+    "api_key":"AIzaSyDV7kGnfCW8W5anPDNAFR-f-fytiovoFq8"
   }
