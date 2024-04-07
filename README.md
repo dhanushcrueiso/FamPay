@@ -26,7 +26,7 @@ Backend Youtube Api consumption
     publish_time TIMESTAMP,
     thumbnails TEXT[]
 );
-- go to postman : localhost:3007/v1/GetData , with query param pg (page num), q(search filter on title) 
+- go to postman : localhost:3000/v1/GetData , with query param pg (page num), q(search filter on title) 
 - Done 
 
 
