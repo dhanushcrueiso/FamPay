@@ -43,3 +43,4 @@ func Set(c *Config) {
 }
 
 var APIKey = "AIzaSyDV7kGnfCW8W5anPDNAFR-f-fytiovoFq8"
+var PageSize = 10

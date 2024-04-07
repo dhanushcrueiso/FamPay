@@ -2,7 +2,7 @@
     "env": "dev",
     "app_name": "fampay",
     "port": "3007",
-    "database_url": "postgresql://postgres:postgres@localhost:5432/youtube_data?sslmode=disable",
+    "database_url": "postgresql://postgres:postgres@db:5432/youtube_data?sslmode=disable",
     "max_db_conn": 5
   
   }

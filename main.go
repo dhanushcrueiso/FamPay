@@ -40,10 +40,14 @@ func main() {
 	routes.SetupRoutes(app)
 	fmt.Printf("Server is running on port %s\n", cnf.Port)
 
-	app.Listen(cnf.Port)
-}
+	go func() {
+		if err := app.Listen(cnf.Port); err != nil {
+			log.Fatalf("Error starting server: %v", err)
+		}
+	}()
 
-func init() {
+	// This will prevent the main function from exiting immediately
+
 	ticker := time.NewTicker(10 * time.Second)
 	defer ticker.Stop()
 
