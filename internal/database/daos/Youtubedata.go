@@ -24,7 +24,7 @@ func GetAllPaginated(req dtos.DataFilter) ([]models.Video, error) {
 	query := db.DB.Debug().Table("videos")
 
 	if req.Q != "" {
-		query.Where("id = (?) ", "60ddde02-d350-4bcb-99f5-c25abd7c6966")
+		query.Where("title ilike (?) ", req.Q+"%")
 	}
 
 	offset := config.PageSize * (req.Page - 1)
